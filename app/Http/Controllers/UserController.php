@@ -8,6 +8,14 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+
+    public function index(){
+        $users= User::all();
+        return view('users.index', compact('users'));
+
+    }
+
+
     public function create(){
         return view('users.create');
         
@@ -29,6 +37,7 @@ class UserController extends Controller
         'email' => 'required|email|unique:users,email',
         'password' => 'required|min:6',
         'rol' => 'required|in:empleado,doctor',
+        'telefono' => 'nullable|string|max:15',
     ]);
     
 
@@ -41,6 +50,7 @@ class UserController extends Controller
         'email' => $request->email,
         'password' => bcrypt($request->password),
         'rol' => $request->rol,
+        'telefono' => $request->telefono, // Agregar el teléfono
     ]);
 
     
