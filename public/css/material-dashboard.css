@@ -17702,8 +17702,8 @@ Copyright (c) 2015 Daniel Eden
   }
 }
 
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
+@media screen and (forced-colors: active),
+(forced-colors: none) {
   .ps-container {
     overflow: auto !important;
   }
@@ -18855,7 +18855,7 @@ Copyright (c) 2015 Daniel Eden
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-}
+}}
 
 
 /*# sourceMappingURL=dashboard-free.css.map */
