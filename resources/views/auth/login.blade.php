@@ -26,8 +26,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-description text-center">{{ __('Enter your credentials ') }}</p>
-                        {{-- <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                        <p class="card-description text-center">{{ __('Enter your credentials') }}</p>
+                        
+                        {{-- Email --}}
+                        <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
@@ -42,24 +44,9 @@
                                 <strong>{{ $errors->first('email') }}</strong>
                             </div>
                             @endif
-                        </div> --}}
-                        {{-- Username --}}
-                        <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }}">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="material-icons">face</i>
-                                    </span>
-                                </div>
-                                <input type="text" name="username" class="form-control" placeholder="{{ __('Username or Email...') }}"
-                                    value="{{ old('username', null) }}" required autocomplete="username" autofocus>
-                            </div>
-                            @if ($errors->has('username'))
-                            <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
-                                <strong>{{ $errors->first('username') }}</strong>
-                            </div>
-                            @endif
                         </div>
+
+                        {{-- Password --}}
                         <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -76,15 +63,6 @@
                                 <strong>{{ $errors->first('password') }}</strong>
                             </div>
                             @endif
-                        </div>
-                        <div class="form-check mr-auto ml-3 mt-3">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="remember"
-                                    {{ old('remember') ? 'checked' : '' }}> {{ __('Remember me') }}
-                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
                         </div>
                     </div>
                     <div class="card-footer justify-content-center">
