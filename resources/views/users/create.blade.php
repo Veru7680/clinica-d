@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'Nuevo usuario'])
+@extends('layouts.main', ['activePage' => 'profile', 'titlePage' => 'Nuevo usuario'])
 @section('content')
 <div class="content">
     <div class="container-fluid">
@@ -47,14 +47,11 @@
                             </div>
 
                             <div class="row">
-                            <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el teléfono" value="{{ old('telefono') }}">
+                                <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el teléfono" value="{{ old('telefono') }}">
+                                </div>
                             </div>
-                        </div>
-
-
-
                         </div>
                         <!-- Footer -->
                         <div class="card-footer text-center ml-auto mr-auto">
@@ -68,3 +65,4 @@
     </div>
 </div>
 @endsection
+
