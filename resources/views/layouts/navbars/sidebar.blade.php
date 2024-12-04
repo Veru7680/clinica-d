@@ -4,11 +4,13 @@
 
       Tip 2: you can also add an image using data-image tag
   -->
-  <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('CLINICA DENTAL') }}
+  <div class="logo" style="display: flex; align-items: center;">
+    <img src="{{ asset('img/dental_1.png') }}" alt="Logo" style="height: 40px; margin-right: 10px;">
+    <a href="{{ route('home') }}" class="simple-text logo-normal" style="text-decoration: none; color: inherit;">
+        {{ __('CLINICA DENTAL') }}
     </a>
-  </div>
+</div>
+
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
@@ -20,26 +22,29 @@
 
       <!-- Laravel Usuarios -->
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-          <i><img style="width:25px" src="{{ asset('img/laravel.svg') }}"></i>
-          <p>{{ __('Laravel Usuarios') }}
+          <p>{{ __('Usuarios') }}
             <b class="caret"></b>
           </p>
         </a>
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('users.create') }}">
-                <span class="sidebar-mini"> UP </span>
-                <span class="sidebar-normal">{{ __('Registro de Usuario') }} </span>
+          <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('users.create') }}" style="display: flex; align-items: center;">
+                  <img src="{{ asset('img/paciente.png') }}" alt="Logo" style="height: 20px; margin-right: 10px;">
+                  <span class="sidebar-normal">{{ __('Registro de Usuario') }} </span>
               </a>
-            </li>
+          </li>
 
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('users.index') }}">
-                <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('Tabla de Usuarios') }} </span>
+
+          <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
+              <a class="nav-link d-flex align-items-center" href="{{ route('users.index') }}">
+                  <img src="{{ asset('img/tabla.png') }}" alt="Logo" style="height: 20px; margin-right: 10px;">
+                  <div>
+                      <span class="sidebar-normal"> {{ __('Tabla de Usuarios') }} </span>
+                  </div>
               </a>
-            </li>
+          </li>
+
           </ul>
         </div>
       </li>
@@ -47,26 +52,29 @@
       <!-- Laravel Paciente -->
       <li class="nav-item {{ ($activePage == 'patient-profile' || $activePage == 'patient-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelPatient" aria-expanded="true">
-          <i><img style="width:25px" src="{{ asset('img/laravel.svg') }}"></i>
-          <p>{{ __('Laravel Paciente') }}
+          <p>{{ __('Paciente') }}
             <b class="caret"></b>
           </p>
         </a>
         <div class="collapse show" id="laravelPatient">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'patient-profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('pacientes.create') }}">
-                <span class="sidebar-mini"> RP </span>
-                <span class="sidebar-normal">{{ __('Registro de Paciente') }} </span>
+          <li class="nav-item{{ $activePage == 'patient-profile' ? ' active' : '' }}">
+              <a class="nav-link d-flex align-items-center" href="{{ route('pacientes.create') }}">
+                  <img src="{{ asset('img/paciente2.png') }}" alt="Logo" style="height: 20px; margin-right: 10px;">
+                  <div>
+                      <span class="sidebar-normal">{{ __('Registro de Paciente') }} </span>
+                  </div>
               </a>
-            </li>
+          </li>
 
-            <li class="nav-item{{ $activePage == 'patient-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('pacientes.index') }}#">
-                <span class="sidebar-mini"> TP </span>
-                <span class="sidebar-normal"> {{ __('Tabla de Pacientes') }} </span>
-              </a>
-            </li>
+
+          <li class="nav-item{{ $activePage == 'patient-management' ? ' active' : '' }}">
+    <a class="nav-link d-flex align-items-center" href="{{ route('pacientes.index') }}">
+        <img src="{{ asset('img/tabla1.png') }}" alt="Logo" style="height: 20px; margin-right: 10px;">
+        <span class="sidebar-normal"> {{ __('Tabla de Pacientes') }} </span>
+    </a>
+</li>
+
           </ul>
         </div>
       </li>

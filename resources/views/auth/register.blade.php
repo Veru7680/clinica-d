@@ -45,11 +45,11 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <i class="material-icons">fingerprint</i>
+                                     <!--    <i class="material-icons">fingerprint</i>
                                     </span>
                                 </div>
-                                <input type="text" name="username" class="form-control" placeholder="{{ __('Username...') }}"
-                                    value="{{ old('username') }}" required autocomplete="username">
+                               <input type="text" name="username" class="form-control" placeholder="{{ __('Username...') }}"
+                                    value="{{ old('username') }}" required autocomplete="username">-->
                             </div>
                             @if ($errors->has('username'))
                             <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
