@@ -60,4 +60,37 @@ class UserController extends Controller
     // Redirigir de vuelta o a una página específica
     return redirect()->back()->with('success', 'Usuario creado correctamente');
 }
+
+public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect()->route('users.index')->with('success', 'Usuario eliminado correctamente.');
+    }
+
+    public function show(User $user)
+{
+    return view('users.show', compact('user'));
+}
+
+
+public function edit(User $user)
+{
+    return view('users.edit', compact('user'));
+}
+
+public function update(Request $request, User $user)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'username' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email,' . $user->id,
+        'rol' => 'required|in:empleado,doctor',
+        'telefono' => 'nullable|string|max:15',
+    ]);
+
+    $user->update($request->all());
+    return redirect()->route('users.index')->with('success', 'Usuario actualizado correctamente.');
+}
+
+
 }

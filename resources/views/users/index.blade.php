@@ -41,20 +41,21 @@
                                                 <td>{{ $user->telefono }}</td>
                                                 <td>{{ $user->rol }}</td>
                                                 <td class="td-actions text-right">
-                                                    <a href=# class="btn btn-info" title="Ver detalles">
-                                                        <i class="material-icons">person</i>
-                                                    </a>
-                                                    <a href=# class="btn btn-warning" title="Editar">
-                                                        <i class="material-icons">edit</i>
-                                                    </a>
-                                                    <form action=# method="POST" style="display: inline-block;" onsubmit="return confirm('¿Seguro que deseas eliminar este usuario?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="btn btn-danger" type="submit" title="Eliminar">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </form>
-                                                </td>
+    <a href="{{ route('users.show', $user->id) }}" class="btn btn-info" title="Ver detalles">
+        <i class="material-icons">visibility</i>
+    </a>
+    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning" title="Editar">
+        <i class="material-icons">edit</i>
+    </a>
+    <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('¿Seguro que deseas eliminar este usuario?')">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger" type="submit" title="Eliminar">
+            <i class="material-icons">delete</i>
+        </button>
+    </form>
+</td>
+
                                             </tr>
                                         @endforeach
                                     @else
