@@ -18,12 +18,7 @@
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre" autofocus>
                                 </div>
                             </div>
-                            <div class="row">
-                                <label for="username" class="col-sm-2 col-form-label">Usuario</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su usuario">
-                                </div>
-                            </div>
+                           
                             <div class="row">
                                 <label for="email" class="col-sm-2 col-form-label">Correo</label>
                                 <div class="col-sm-10">

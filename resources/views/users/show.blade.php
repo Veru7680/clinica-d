@@ -12,7 +12,6 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p><strong>Nombre:</strong> {{ $user->name }}</p>
-                        <p><strong>Usuario:</strong> {{ $user->username }}</p>
                         <p><strong>Correo:</strong> {{ $user->email }}</p>
                         <p><strong>Teléfono:</strong> {{ $user->telefono }}</p>
                         <p><strong>Rol:</strong> {{ $user->rol }}</p>

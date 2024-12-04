@@ -35,7 +35,7 @@ class UserController extends Controller
 
     $request->validate([
         'name' => 'required|string|max:255',
-        'username' => 'required|string|max:255',
+       // 'username' => 'required|string|max:255',
         'email' => 'required|email|unique:users,email',
         'password' => 'required|min:6',
         'rol' => 'required|in:empleado,doctor',
@@ -48,7 +48,7 @@ class UserController extends Controller
     // Crear el usuario con el rol proporcionado
     User::create([
         'name' => $request->name,
-        'username' => $request->username,
+        //'username' => $request->username,
         'email' => $request->email,
         'password' => bcrypt($request->password),
         'rol' => $request->rol,
@@ -82,7 +82,7 @@ public function update(Request $request, User $user)
 {
     $request->validate([
         'name' => 'required|string|max:255',
-        'username' => 'required|string|max:255',
+      //  'username' => 'required|string|max:255',
         'email' => 'required|email|unique:users,email,' . $user->id,
         'rol' => 'required|in:empleado,doctor',
         'telefono' => 'nullable|string|max:15',
